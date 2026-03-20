@@ -131,8 +131,13 @@ export default function Index() {
               </span>
             </div>
           )}
-          <div className="font-oswald text-2xl font-bold tracking-wider" style={{ color: rank.color }}>
-            {rank.title}
+          <div className="flex items-center justify-center mb-1">
+            <div
+              className="w-14 h-14 rounded-full flex items-center justify-center"
+              style={{ background: "#ef4444", boxShadow: "0 0 20px #ef444499" }}
+            >
+              <span className="font-oswald text-2xl font-bold text-white">{rank.title}</span>
+            </div>
           </div>
           {nextRank && (
             <div className="mt-3">
