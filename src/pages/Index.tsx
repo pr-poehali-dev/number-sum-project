@@ -2,15 +2,15 @@ import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
 const RANKS = [
-  { min: 0,     title: "1",  icon: "", color: "#9ca3af" },
-  { min: 200,   title: "2",  icon: "", color: "#60a5fa" },
-  { min: 500,   title: "3",  icon: "", color: "#34d399" },
-  { min: 1000,  title: "4",  icon: "", color: "#f97316" },
-  { min: 2000,  title: "5",  icon: "", color: "#fbbf24" },
-  { min: 4000,  title: "6",  icon: "", color: "#a78bfa" },
-  { min: 7000,  title: "7",  icon: "", color: "#f43f5e" },
-  { min: 10000, title: "8",  icon: "", color: "#e879f9" },
-  { min: 15000, title: "9",  icon: "", color: "#38bdf8" },
+  { min: 0,     title: "1",  icon: "", color: "#22c55e" },
+  { min: 200,   title: "2",  icon: "", color: "#65d448" },
+  { min: 500,   title: "3",  icon: "", color: "#a8e030" },
+  { min: 1000,  title: "4",  icon: "", color: "#f0c020" },
+  { min: 2000,  title: "5",  icon: "", color: "#f59020" },
+  { min: 4000,  title: "6",  icon: "", color: "#f06020" },
+  { min: 7000,  title: "7",  icon: "", color: "#e83020" },
+  { min: 10000, title: "8",  icon: "", color: "#cc1010" },
+  { min: 15000, title: "9",  icon: "", color: "#990000" },
 ];
 
 function getRank(total: number) {
