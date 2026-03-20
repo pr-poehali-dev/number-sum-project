@@ -194,6 +194,14 @@ export default function Index() {
           Получить очки
         </button>
 
+        <button
+          onClick={handleReset}
+          className="w-full py-3 rounded-2xl font-oswald text-lg font-bold uppercase tracking-widest text-white/70 border border-red-500/30 hover:border-red-500/70 hover:text-white transition-all duration-150 active:scale-95"
+          style={{ background: "rgba(239,68,68,0.08)" }}
+        >
+          Обнулить
+        </button>
+
         {/* Список звания */}
         <div className="rounded-2xl border border-white/10 bg-white/3 p-4">
           <div className="text-xs font-rubik text-white/40 uppercase tracking-widest mb-3">Все звания</div>
