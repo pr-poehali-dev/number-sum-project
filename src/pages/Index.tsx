@@ -133,10 +133,14 @@ export default function Index() {
           )}
           <div className="flex items-center justify-center mb-1">
             <div
-              className="w-14 h-14 rounded-full flex items-center justify-center"
-              style={{ background: "#ef4444", boxShadow: "0 0 20px #ef444499" }}
+              className="w-16 h-16 rounded-full flex items-center justify-center border-2"
+              style={{
+                background: `${rank.color}22`,
+                borderColor: rank.color,
+                boxShadow: `0 0 24px ${rank.color}99`,
+              }}
             >
-              <span className="font-oswald text-2xl font-bold text-white">{rank.title}</span>
+              <span className="font-oswald text-3xl font-bold" style={{ color: rank.color }}>{rank.title}</span>
             </div>
           </div>
           {nextRank && (
@@ -213,10 +217,14 @@ export default function Index() {
               >
                 <div className="flex items-center gap-2">
                   <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ background: "#ef4444", boxShadow: r.title === rank.title ? "0 0 10px #ef444488" : "none" }}
+                    className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 border-2"
+                    style={{
+                      background: `${r.color}22`,
+                      borderColor: r.color,
+                      boxShadow: r.title === rank.title ? `0 0 12px ${r.color}99` : "none",
+                    }}
                   >
-                    <span className="font-oswald text-sm font-bold text-white">{r.title}</span>
+                    <span className="font-oswald text-sm font-bold" style={{ color: r.color }}>{r.title}</span>
                   </div>
                 </div>
                 <span className="font-oswald text-sm text-white/50">{r.min.toLocaleString("ru-RU")}+</span>
