@@ -2,15 +2,15 @@ import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
 const RANKS = [
-  { min: 0,     title: "1",  icon: "🌱", color: "#9ca3af" },
-  { min: 200,   title: "2",  icon: "📚", color: "#60a5fa" },
-  { min: 500,   title: "3",  icon: "⚔️", color: "#34d399" },
-  { min: 1000,  title: "4",  icon: "🔥", color: "#f97316" },
-  { min: 2000,  title: "5",  icon: "🏆", color: "#fbbf24" },
-  { min: 4000,  title: "6",  icon: "💎", color: "#a78bfa" },
-  { min: 7000,  title: "7",  icon: "🚀", color: "#f43f5e" },
-  { min: 10000, title: "8",  icon: "👑", color: "#e879f9" },
-  { min: 15000, title: "9",  icon: "🌌", color: "#38bdf8" },
+  { min: 0,     title: "1",  icon: "", color: "#9ca3af" },
+  { min: 200,   title: "2",  icon: "", color: "#60a5fa" },
+  { min: 500,   title: "3",  icon: "", color: "#34d399" },
+  { min: 1000,  title: "4",  icon: "", color: "#f97316" },
+  { min: 2000,  title: "5",  icon: "", color: "#fbbf24" },
+  { min: 4000,  title: "6",  icon: "", color: "#a78bfa" },
+  { min: 7000,  title: "7",  icon: "", color: "#f43f5e" },
+  { min: 10000, title: "8",  icon: "", color: "#e879f9" },
+  { min: 15000, title: "9",  icon: "", color: "#38bdf8" },
 ];
 
 function getRank(total: number) {
@@ -131,7 +131,6 @@ export default function Index() {
               </span>
             </div>
           )}
-          <div className="text-4xl mb-1">{rank.icon}</div>
           <div className="font-oswald text-2xl font-bold tracking-wider" style={{ color: rank.color }}>
             {rank.title}
           </div>
@@ -200,7 +199,6 @@ export default function Index() {
                 className={`flex items-center justify-between px-3 py-2 rounded-xl transition-all duration-300 ${r.title === rank.title ? "bg-white/10" : "opacity-40"}`}
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-base">{r.icon}</span>
                   <span className="font-rubik text-sm font-medium" style={{ color: r.title === rank.title ? r.color : "white" }}>
                     {r.title}
                   </span>
