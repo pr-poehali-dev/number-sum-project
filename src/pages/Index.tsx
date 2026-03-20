@@ -199,9 +199,12 @@ export default function Index() {
                 className={`flex items-center justify-between px-3 py-2 rounded-xl transition-all duration-300 ${r.title === rank.title ? "bg-white/10" : "opacity-40"}`}
               >
                 <div className="flex items-center gap-2">
-                  <span className="font-rubik text-sm font-medium" style={{ color: r.title === rank.title ? r.color : "white" }}>
-                    {r.title}
-                  </span>
+                  <div
+                    className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ background: "#ef4444", boxShadow: r.title === rank.title ? "0 0 10px #ef444488" : "none" }}
+                  >
+                    <span className="font-oswald text-sm font-bold text-white">{r.title}</span>
+                  </div>
                 </div>
                 <span className="font-oswald text-sm text-white/50">{r.min.toLocaleString("ru-RU")}+</span>
               </div>
