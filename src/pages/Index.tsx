@@ -83,6 +83,26 @@ export default function Index() {
     }
   };
 
+  const handleMinus = () => {
+    const value = Math.floor(Math.random() * 21) + 20;
+    const newTotal = Math.max(0, total - value);
+    const newRank = getRank(newTotal);
+
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+
+    setLastValue(-value);
+    setTotal(newTotal);
+    setHistory(prev => [{ value: -value, total: newTotal, time: timeStr }, ...prev].slice(0, 50));
+
+    setIsAnimating(true);
+    setTimeout(() => setIsAnimating(false), 400);
+
+    if (newRank.title !== prevRankRef.current) {
+      prevRankRef.current = newRank.title;
+    }
+  };
+
   const handleReset = () => {
     setTotal(0);
     setHistory([]);
@@ -186,17 +206,29 @@ export default function Index() {
           )}
         </div>
 
-        {/* Кнопка */}
-        <button
-          onClick={handleClick}
-          className="relative w-full py-5 rounded-2xl font-oswald text-2xl font-bold uppercase tracking-widest text-black transition-all duration-150 active:scale-95 hover:brightness-110"
-          style={{
-            background: "linear-gradient(135deg, #22c55e 0%, #16a34a 100%)",
-            boxShadow: "0 0 30px rgba(34,197,94,0.4), 0 4px 20px rgba(34,197,94,0.3)",
-          }}
-        >
-          Получить очки
-        </button>
+        {/* Кнопки */}
+        <div className="flex gap-3">
+          <button
+            onClick={handleClick}
+            className="relative flex-1 py-5 rounded-2xl font-oswald text-2xl font-bold uppercase tracking-widest text-black transition-all duration-150 active:scale-95 hover:brightness-110"
+            style={{
+              background: "linear-gradient(135deg, #22c55e 0%, #16a34a 100%)",
+              boxShadow: "0 0 30px rgba(34,197,94,0.4), 0 4px 20px rgba(34,197,94,0.3)",
+            }}
+          >
+            + Получить
+          </button>
+          <button
+            onClick={handleMinus}
+            className="relative flex-1 py-5 rounded-2xl font-oswald text-2xl font-bold uppercase tracking-widest text-white transition-all duration-150 active:scale-95 hover:brightness-110"
+            style={{
+              background: "linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)",
+              boxShadow: "0 0 30px rgba(239,68,68,0.4), 0 4px 20px rgba(239,68,68,0.3)",
+            }}
+          >
+            − Забрать
+          </button>
+        </div>
 
         <button
           onClick={handleReset}
@@ -259,8 +291,8 @@ export default function Index() {
                   className={`flex items-center justify-between px-3 py-2 rounded-xl bg-white/5 ${i === 0 ? "animate-fade-in" : ""}`}
                 >
                   <div className="flex items-center gap-2">
-                    <span className="font-oswald text-base font-bold" style={{ color: "#4ade80" }}>
-                      +{entry.value}
+                    <span className="font-oswald text-base font-bold" style={{ color: entry.value >= 0 ? "#4ade80" : "#f87171" }}>
+                      {entry.value >= 0 ? `+${entry.value}` : entry.value}
                     </span>
                     <span className="text-xs text-white/30 font-rubik">= {entry.total.toLocaleString("ru-RU")}</span>
                   </div>
