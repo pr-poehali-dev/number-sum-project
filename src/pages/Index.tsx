@@ -154,14 +154,29 @@ export default function Index() {
           )}
           <div className="flex items-center justify-center mb-1">
             <div
-              className="w-16 h-16 rounded-full flex items-center justify-center border-2"
-              style={{
-                background: `${rank.color}22`,
-                borderColor: rank.color,
-                boxShadow: `0 0 24px ${rank.color}99`,
-              }}
+              className="w-20 h-20 flex items-center justify-center"
+              style={{ filter: `drop-shadow(0 0 16px ${rank.color}99)` }}
             >
-              <span className="font-oswald text-3xl font-bold" style={{ color: rank.color }}>{rank.title}</span>
+              <img
+                src={`https://cdn.faceit.com/frontend/159/assets/images/skill-icons/skill_level_${rank.title}_md.png`}
+                alt={`Level ${rank.title}`}
+                className="w-full h-full object-contain"
+                onError={(e) => {
+                  const el = e.currentTarget;
+                  el.style.display = "none";
+                  const fallback = el.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = "flex";
+                }}
+              />
+              <div
+                className="w-16 h-16 rounded-full items-center justify-center border-2 hidden"
+                style={{
+                  background: `${rank.color}22`,
+                  borderColor: rank.color,
+                }}
+              >
+                <span className="font-oswald text-3xl font-bold" style={{ color: rank.color }}>{rank.title}</span>
+              </div>
             </div>
           </div>
           {nextRank && (
