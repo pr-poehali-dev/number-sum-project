@@ -265,14 +265,24 @@ export default function Index() {
               >
                 <div className="flex items-center gap-2">
                   <div
-                    className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 border-2"
-                    style={{
-                      background: `${r.color}22`,
-                      borderColor: r.color,
-                      boxShadow: r.title === rank.title ? `0 0 12px ${r.color}99` : "none",
-                    }}
+                    className="w-9 h-9 flex items-center justify-center flex-shrink-0"
+                    style={{ filter: r.title === rank.title ? `drop-shadow(0 0 8px ${r.color}99)` : "none" }}
                   >
-                    <span className="font-oswald text-sm font-bold" style={{ color: r.color }}>{r.title}</span>
+                    <img
+                      src={`https://cdn.faceit.com/frontend/159/assets/images/skill-icons/skill_level_${r.title}_md.png`}
+                      alt={`Level ${r.title}`}
+                      className="w-full h-full object-contain"
+                      onError={(e) => {
+                        const el = e.currentTarget;
+                        el.style.display = "none";
+                        const fb = el.nextElementSibling as HTMLElement;
+                        if (fb) fb.style.display = "flex";
+                      }}
+                    />
+                    <div className="w-9 h-9 rounded-full items-center justify-center border-2 hidden"
+                      style={{ background: `${r.color}22`, borderColor: r.color }}>
+                      <span className="font-oswald text-sm font-bold" style={{ color: r.color }}>{r.title}</span>
+                    </div>
                   </div>
                 </div>
                 <span className="font-oswald text-sm text-white/50">{r.min.toLocaleString("ru-RU")}+</span>
@@ -307,6 +317,11 @@ export default function Index() {
                   className={`flex items-center justify-between px-3 py-2 rounded-xl bg-white/5 ${i === 0 ? "animate-fade-in" : ""}`}
                 >
                   <div className="flex items-center gap-2">
+                    <img
+                      src={`https://cdn.faceit.com/frontend/159/assets/images/skill-icons/skill_level_${getRank(entry.total).title}_md.png`}
+                      alt={`Level ${getRank(entry.total).title}`}
+                      className="w-6 h-6 object-contain flex-shrink-0"
+                    />
                     <span className="font-oswald text-base font-bold" style={{ color: entry.value >= 0 ? "#4ade80" : "#f87171" }}>
                       {entry.value >= 0 ? `+${entry.value}` : entry.value}
                     </span>
