@@ -2,15 +2,16 @@ import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
 const RANKS = [
-  { min: 0,     title: "1",  icon: "", color: "#22c55e" },
-  { min: 200,   title: "2",  icon: "", color: "#65d448" },
-  { min: 500,   title: "3",  icon: "", color: "#a8e030" },
-  { min: 1000,  title: "4",  icon: "", color: "#f0c020" },
-  { min: 2000,  title: "5",  icon: "", color: "#f59020" },
-  { min: 4000,  title: "6",  icon: "", color: "#f06020" },
-  { min: 7000,  title: "7",  icon: "", color: "#e83020" },
-  { min: 10000, title: "8",  icon: "", color: "#cc1010" },
-  { min: 15000, title: "9",  icon: "", color: "#990000" },
+  { min: 0,    title: "1",  icon: "", color: "#22c55e" },
+  { min: 501,  title: "2",  icon: "", color: "#65d448" },
+  { min: 751,  title: "3",  icon: "", color: "#a8e030" },
+  { min: 901,  title: "4",  icon: "", color: "#f0c020" },
+  { min: 1051, title: "5",  icon: "", color: "#f59020" },
+  { min: 1201, title: "6",  icon: "", color: "#f06020" },
+  { min: 1351, title: "7",  icon: "", color: "#e83020" },
+  { min: 1531, title: "8",  icon: "", color: "#cc1010" },
+  { min: 1751, title: "9",  icon: "", color: "#990000" },
+  { min: 2001, title: "10", icon: "", color: "#ff6600" },
 ];
 
 function getRank(total: number) {
