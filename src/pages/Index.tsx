@@ -3,15 +3,15 @@ import Icon from "@/components/ui/icon";
 
 const RANKS = [
   { min: 0,    title: "1",  icon: "", color: "#22c55e" },
-  { min: 501,  title: "2",  icon: "", color: "#65d448" },
-  { min: 751,  title: "3",  icon: "", color: "#a8e030" },
-  { min: 901,  title: "4",  icon: "", color: "#f0c020" },
-  { min: 1051, title: "5",  icon: "", color: "#f59020" },
-  { min: 1201, title: "6",  icon: "", color: "#f06020" },
-  { min: 1351, title: "7",  icon: "", color: "#e83020" },
-  { min: 1531, title: "8",  icon: "", color: "#cc1010" },
-  { min: 1751, title: "9",  icon: "", color: "#990000" },
-  { min: 2001, title: "10", icon: "", color: "#ff6600" },
+  { min: 251,  title: "2",  icon: "", color: "#65d448" },
+  { min: 501,  title: "3",  icon: "", color: "#a8e030" },
+  { min: 651,  title: "4",  icon: "", color: "#f0c020" },
+  { min: 801,  title: "5",  icon: "", color: "#f59020" },
+  { min: 951,  title: "6",  icon: "", color: "#f06020" },
+  { min: 1101, title: "7",  icon: "", color: "#e83020" },
+  { min: 1281, title: "8",  icon: "", color: "#cc1010" },
+  { min: 1501, title: "9",  icon: "", color: "#990000" },
+  { min: 1751, title: "10", icon: "", color: "#ff6600" },
 ];
 
 function getRank(total: number) {
